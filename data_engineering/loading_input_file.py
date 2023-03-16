@@ -17,9 +17,10 @@ def download_data_from_kaggle():
     file_name = 'HAM10000_metadata.csv'
     file_path = '../data/input/'
     dataset_dir = file_path + file_name
+    new_file_name = file_path + 'input_data_from_kaggle.csv'
 
     # Checking whether file already is downloaded
-    if os.path.exists(dataset_dir):
+    if os.path.exists(new_file_name):
         print("Found dataset directory, exiting")
         exit(0)
 
@@ -30,6 +31,9 @@ def download_data_from_kaggle():
     api.dataset_download_file(dataset=dataset,
                               file_name=file_name,
                               path='../data/input')
+
+    # Renaming downloaded file
+    os.rename(dataset_dir, new_file_name)
 
 
 def main():
