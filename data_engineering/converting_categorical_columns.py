@@ -9,6 +9,7 @@ def create_dummies_categorical_columns(input_data):
     :param input_data: dataframe to be processed
     :return: input_data - dataframe with dummy columns
     """
+
     input_data = pd.get_dummies(input_data,
                                 columns=["dx_type", "localization"])
 
@@ -22,6 +23,7 @@ def label_encoding_sex_column(df_with_dummies):
     :param df_with_dummies: dataframe to be processed
     :return: df_with_dummies - dataframe with converted column
     """
+
     le = LabelEncoder()
     df_with_dummies['sex'] = le.fit_transform(df_with_dummies['sex'])
 
