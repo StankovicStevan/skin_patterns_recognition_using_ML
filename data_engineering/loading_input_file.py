@@ -8,6 +8,7 @@ def download_data_from_kaggle():
 
     :return: None
     """
+
     api = KaggleApi()
 
     # API token has been provided through environment variables (KAGGLE_USERNAME, KAGGLE_KEY)
