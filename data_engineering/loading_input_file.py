@@ -8,6 +8,7 @@ def download_data_from_kaggle():
 
     :return: None
     """
+
     api = KaggleApi()
 
     # API token has been provided through environment variables (KAGGLE_USERNAME, KAGGLE_KEY)
@@ -28,9 +29,9 @@ def download_data_from_kaggle():
 
     # Downloading file from kaggle (link: 'https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000') and
     # creating new file
-    api.dataset_download_file(dataset=dataset,
-                              file_name=file_name,
-                              path='../data/input')
+    api.dataset_download_files(dataset=dataset,
+                               path='../data/input',
+                               unzip=True)
 
     # Renaming downloaded file
     os.rename(dataset_dir, new_file_name)
